@@ -1,0 +1,22 @@
+/* Iframe bodies have ptx-content but not pretext, so the theme's body.pretext
+   typography rule does not apply even though its fonts are already loaded. */
+body.ptx-content {
+    font-family: var(--font-body);
+    color: var(--body-text-color);
+}
+
+/* Match default-modern's wide Runestone blocks for authored wide iframes.
+   Keep the iframe's design width and scroll within its wrapper on small screens. */
+.ptx-content .interactive-iframe-container:has(> iframe[data-design-width-wide]) {
+    overflow-x: auto;
+}
+
+@container ptx-main (width > 696px) {
+    .ptx-content .interactive-iframe-container:has(> iframe[data-design-width-wide]) {
+        --max-width: min(calc(100cqw - 96px), 900px);
+        min-width: 100%;
+        clear: right;
+        width: var(--max-width);
+        max-width: var(--max-width);
+    }
+}

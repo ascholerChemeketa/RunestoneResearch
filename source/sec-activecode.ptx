@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Example adapted from examples/sample-book/rune.xml in PreTeXt.
+     Copyright (C) 2016-2026  Robert A. Beezer
+     Distributed under the GNU General Public License, version 2 or later. -->
+<section xml:id="sec-activecode" label="sec-activecode" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>ActiveCode</title>
+
+  <p>Run or edit this standard Python ActiveCode example from the PreTeXt sample book.</p>
+
+  <listing xml:id="listing-activecode-baseline">
+    <title>Standard ActiveCode</title>
+    <program xml:id="activecode-baseline" label="activecode-baseline" interactive="activecode" language="python">
+      <code>
+      print("Hello, World!")
+      </code>
+    </program>
+  </listing>
+
+  <p>The iframe below uses a copy of the generated ActiveCode HTML as the starting point for an experiment.</p>
+
+  <figure xml:id="figure-activecode-experiment">
+    <caption>ActiveCode experiment</caption>
+    <interactive xml:id="interactive-activecode-experiment" label="interactive-activecode-experiment" platform="javascript" custom-runestone="yes" dark-mode-enabled="yes" design-width="864" aspect="3:2" source="experiments/activecode.js">
+      <slate xml:id="activecode-experiment" surface="html" aspect="3:2">
+        <xi:include href="experiments/activecode.xhtml" />
+      </slate>
+    </interactive>
+  </figure>
+</section>

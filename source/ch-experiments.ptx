@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-experiments" label="ch-experiments" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Runestone Experiments</title>
+
+  <introduction>
+    <p>Each section pairs a standard Runestone component with a JavaScript interactive reserved for an experimental version.</p>
+  </introduction>
+
+  <xi:include href="sec-activecode.ptx" />
+  <xi:include href="sec-parsons.ptx" />
+</chapter>

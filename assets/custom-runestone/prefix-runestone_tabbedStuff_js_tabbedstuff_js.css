@@ -1,0 +1,71 @@
+/*!*********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./runestone/tabbedStuff/css/tabbedstuff.css ***!
+  \*********************************************************************************************/
+/* Layout for the tab strip and the panes.  These rules used to come from
+   Bootstrap 3, which ptxrs-bootstrap.less imported.  Bootstrap is gone, so the
+   component owns them now -- without them the <ul> renders as a bulleted list
+   and every pane is visible at once (PreTeXt books never loaded Bootstrap at
+   all, so they lost the tabs entirely). */
+.runestone-tabs > .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    border-bottom: 1px solid var(--componentBorderColor);
+}
+
+.runestone-tabs > .nav-tabs > li {
+    display: block;
+    position: relative;
+    margin-bottom: -1px;
+}
+
+.runestone-tabs > .nav-tabs > li > a {
+    display: block;
+    position: relative;
+    padding: 10px 15px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.runestone-tabs > .nav-tabs > li > a:is(:hover, :focus) {
+    text-decoration: none;
+}
+
+.runestone-tabs > .tab-content > .tab-pane {
+    display: none;
+    padding: 20px 15px 10px 15px;
+}
+
+.runestone-tabs > .tab-content > .tab-pane.active {
+    display: block;
+}
+
+/* Runestone's own look on top of that layout. */
+.runestone-tabs > .nav.nav-tabs {
+    padding-top: 6px;
+    background-color: var(--componentBgColor);
+    border-color: var(--componentBorderColor);
+}
+
+.runestone-tabs > .nav.nav-tabs > li {
+    margin-right: 1px;
+    margin-left: 6px;
+}
+
+.runestone-tabs > .nav.nav-tabs > li > a {
+    border: 1px solid var(--componentBorderColor);
+    border-radius: 4px 4px 0 0;
+    color: var(--bodyFont, #555);
+}
+
+.runestone-tabs > .nav.nav-tabs > li.active > a,
+.runestone-tabs > .nav.nav-tabs > li > a:is(:hover, :focus),
+.runestone-tabs > .nav.nav-tabs > li.active > a:is(:hover, :focus) {
+    background-color: #156ba4;
+    color: white;
+}
+
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHJlZml4LXJ1bmVzdG9uZV90YWJiZWRTdHVmZl9qc190YWJiZWRzdHVmZl9qcy5jc3MiLCJtYXBwaW5ncyI6Ijs7O0FBQUE7Ozs7MENBSTBDO0FBQzFDO0lBQ0ksYUFBYTtJQUNiLGVBQWU7SUFDZixnQkFBZ0I7SUFDaEIsU0FBUztJQUNULGVBQWU7SUFDZixvREFBb0Q7QUFDeEQ7O0FBRUE7SUFDSSxjQUFjO0lBQ2Qsa0JBQWtCO0lBQ2xCLG1CQUFtQjtBQUN2Qjs7QUFFQTtJQUNJLGNBQWM7SUFDZCxrQkFBa0I7SUFDbEIsa0JBQWtCO0lBQ2xCLHFCQUFxQjtJQUNyQixlQUFlO0FBQ25COztBQUVBO0lBQ0kscUJBQXFCO0FBQ3pCOztBQUVBO0lBQ0ksYUFBYTtJQUNiLDRCQUE0QjtBQUNoQzs7QUFFQTtJQUNJLGNBQWM7QUFDbEI7O0FBRUEsZ0RBQWdEO0FBQ2hEO0lBQ0ksZ0JBQWdCO0lBQ2hCLHlDQUF5QztJQUN6Qyx5Q0FBeUM7QUFDN0M7O0FBRUE7SUFDSSxpQkFBaUI7SUFDakIsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksNkNBQTZDO0lBQzdDLDBCQUEwQjtJQUMxQiw0QkFBNEI7QUFDaEM7O0FBRUE7OztJQUdJLHlCQUF5QjtJQUN6QixZQUFZO0FBQ2hCIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vV2ViQ29tcG9uZW50cy8uL3J1bmVzdG9uZS90YWJiZWRTdHVmZi9jc3MvdGFiYmVkc3R1ZmYuY3NzIl0sInNvdXJjZXNDb250ZW50IjpbIi8qIExheW91dCBmb3IgdGhlIHRhYiBzdHJpcCBhbmQgdGhlIHBhbmVzLiAgVGhlc2UgcnVsZXMgdXNlZCB0byBjb21lIGZyb21cbiAgIEJvb3RzdHJhcCAzLCB3aGljaCBwdHhycy1ib290c3RyYXAubGVzcyBpbXBvcnRlZC4gIEJvb3RzdHJhcCBpcyBnb25lLCBzbyB0aGVcbiAgIGNvbXBvbmVudCBvd25zIHRoZW0gbm93IC0tIHdpdGhvdXQgdGhlbSB0aGUgPHVsPiByZW5kZXJzIGFzIGEgYnVsbGV0ZWQgbGlzdFxuICAgYW5kIGV2ZXJ5IHBhbmUgaXMgdmlzaWJsZSBhdCBvbmNlIChQcmVUZVh0IGJvb2tzIG5ldmVyIGxvYWRlZCBCb290c3RyYXAgYXRcbiAgIGFsbCwgc28gdGhleSBsb3N0IHRoZSB0YWJzIGVudGlyZWx5KS4gKi9cbi5ydW5lc3RvbmUtdGFicyA+IC5uYXYtdGFicyB7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBmbGV4LXdyYXA6IHdyYXA7XG4gICAgbGlzdC1zdHlsZTogbm9uZTtcbiAgICBtYXJnaW46IDA7XG4gICAgcGFkZGluZy1sZWZ0OiAwO1xuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCB2YXIoLS1jb21wb25lbnRCb3JkZXJDb2xvcik7XG59XG5cbi5ydW5lc3RvbmUtdGFicyA+IC5uYXYtdGFicyA+IGxpIHtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgbWFyZ2luLWJvdHRvbTogLTFweDtcbn1cblxuLnJ1bmVzdG9uZS10YWJzID4gLm5hdi10YWJzID4gbGkgPiBhIHtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgcGFkZGluZzogMTBweCAxNXB4O1xuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG59XG5cbi5ydW5lc3RvbmUtdGFicyA+IC5uYXYtdGFicyA+IGxpID4gYTppcyg6aG92ZXIsIDpmb2N1cykge1xuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbn1cblxuLnJ1bmVzdG9uZS10YWJzID4gLnRhYi1jb250ZW50ID4gLnRhYi1wYW5lIHtcbiAgICBkaXNwbGF5OiBub25lO1xuICAgIHBhZGRpbmc6IDIwcHggMTVweCAxMHB4IDE1cHg7XG59XG5cbi5ydW5lc3RvbmUtdGFicyA+IC50YWItY29udGVudCA+IC50YWItcGFuZS5hY3RpdmUge1xuICAgIGRpc3BsYXk6IGJsb2NrO1xufVxuXG4vKiBSdW5lc3RvbmUncyBvd24gbG9vayBvbiB0b3Agb2YgdGhhdCBsYXlvdXQuICovXG4ucnVuZXN0b25lLXRhYnMgPiAubmF2Lm5hdi10YWJzIHtcbiAgICBwYWRkaW5nLXRvcDogNnB4O1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWNvbXBvbmVudEJnQ29sb3IpO1xuICAgIGJvcmRlci1jb2xvcjogdmFyKC0tY29tcG9uZW50Qm9yZGVyQ29sb3IpO1xufVxuXG4ucnVuZXN0b25lLXRhYnMgPiAubmF2Lm5hdi10YWJzID4gbGkge1xuICAgIG1hcmdpbi1yaWdodDogMXB4O1xuICAgIG1hcmdpbi1sZWZ0OiA2cHg7XG59XG5cbi5ydW5lc3RvbmUtdGFicyA+IC5uYXYubmF2LXRhYnMgPiBsaSA+IGEge1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWNvbXBvbmVudEJvcmRlckNvbG9yKTtcbiAgICBib3JkZXItcmFkaXVzOiA0cHggNHB4IDAgMDtcbiAgICBjb2xvcjogdmFyKC0tYm9keUZvbnQsICM1NTUpO1xufVxuXG4ucnVuZXN0b25lLXRhYnMgPiAubmF2Lm5hdi10YWJzID4gbGkuYWN0aXZlID4gYSxcbi5ydW5lc3RvbmUtdGFicyA+IC5uYXYubmF2LXRhYnMgPiBsaSA+IGE6aXMoOmhvdmVyLCA6Zm9jdXMpLFxuLnJ1bmVzdG9uZS10YWJzID4gLm5hdi5uYXYtdGFicyA+IGxpLmFjdGl2ZSA+IGE6aXMoOmhvdmVyLCA6Zm9jdXMpIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMTU2YmE0O1xuICAgIGNvbG9yOiB3aGl0ZTtcbn1cbiJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==*/

@@ -1,0 +1,92 @@
+/*!*********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./runestone/clickableArea/css/clickable.css ***!
+  \*********************************************************************************************/
+.clickable {
+    cursor: pointer;
+}
+
+/* Keyboard users need to see which choice they are on. */
+.clickable:focus-visible {
+    outline: 3px solid var(--clickableFocusColor);
+    outline-offset: 2px;
+}
+
+.clickable:has(code) {
+    padding: 3px;
+    display: inline-block;
+}
+
+.clickable-clicked:has(code) {
+    box-shadow: 0px 0px 2px 2px rgba(0, 100, 0, 0.75);
+}
+
+.clickable-clicked {
+    background-color: var(--clickableBgColor);
+}
+
+.clickable-clicked td {
+    background-color: #dad6c1;
+    box-shadow: initial;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th.clickable,
+td.clickable {
+    border: 1px solid black;
+}
+
+td.clickable-clicked {
+    background-color: #dad6c1;
+    box-shadow: initial;
+}
+
+td img {
+    margin: 5px;
+}
+
+.clickable-clicked th {
+    background-color: #dad6c1;
+    box-shadow: initial;
+}
+
+th.clickable-clicked {
+    background-color: #dad6c1;
+    box-shadow: initial;
+}
+
+.clickable-incorrect,
+.clickable-incorrect th,
+.clickable-incorrect td {
+    border: 1px solid red !important;
+    background-color: var(--clickableIncorrectBgColor);
+}
+
+img.clickable-incorrect {
+    box-shadow: 0px 0px 2px 2px rgba(100, 0, 0, 0.75);
+}
+
+.clickable-incorrect:has(code) {
+    box-shadow: 0px 0px 2px 2px rgba(251, 0, 0, 0.75);
+}
+
+:root {
+    --clickableBgColor: yellow;
+    --clickableIncorrectBgColor: #ffcccc;
+    --clickableFocusColor: #0b5fff;
+}
+
+:root.dark-mode {
+    --clickableBgColor: rgb(60, 86, 36);
+    --clickableIncorrectBgColor: #562c2c;
+    --clickableFocusColor: #7ab8ff;
+
+    .clickable-clicked:has(code):not(.clickable-incorrect) {
+        box-shadow: 0px 0px 2px 2px rgba(251, 255, 21, 0.75);
+    }
+}
+
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHJlZml4LXJ1bmVzdG9uZV9jbGlja2FibGVBcmVhX2Nzc19jbGlja2FibGVfY3NzLmNzcyIsIm1hcHBpbmdzIjoiOzs7QUFBQTtJQUNJLGVBQWU7QUFDbkI7O0FBRUEseURBQXlEO0FBQ3pEO0lBQ0ksNkNBQTZDO0lBQzdDLG1CQUFtQjtBQUN2Qjs7QUFFQTtJQUNJLFlBQVk7SUFDWixxQkFBcUI7QUFDekI7O0FBRUE7SUFDSSxpREFBaUQ7QUFDckQ7O0FBRUE7SUFDSSx5Q0FBeUM7QUFDN0M7O0FBRUE7SUFDSSx5QkFBeUI7SUFDekIsbUJBQW1CO0FBQ3ZCOztBQUVBO0lBQ0kseUJBQXlCO0FBQzdCOztBQUVBOztJQUVJLHVCQUF1QjtBQUMzQjs7QUFFQTtJQUNJLHlCQUF5QjtJQUN6QixtQkFBbUI7QUFDdkI7O0FBRUE7SUFDSSxXQUFXO0FBQ2Y7O0FBRUE7SUFDSSx5QkFBeUI7SUFDekIsbUJBQW1CO0FBQ3ZCOztBQUVBO0lBQ0kseUJBQXlCO0lBQ3pCLG1CQUFtQjtBQUN2Qjs7QUFFQTs7O0lBR0ksZ0NBQWdDO0lBQ2hDLGtEQUFrRDtBQUN0RDs7QUFFQTtJQUNJLGlEQUFpRDtBQUNyRDs7QUFFQTtJQUNJLGlEQUFpRDtBQUNyRDs7QUFFQTtJQUNJLDBCQUEwQjtJQUMxQixvQ0FBb0M7SUFDcEMsOEJBQThCO0FBQ2xDOztBQUVBO0lBQ0ksbUNBQW1DO0lBQ25DLG9DQUFvQztJQUNwQyw4QkFBOEI7O0lBRTlCO1FBQ0ksb0RBQW9EO0lBQ3hEO0FBQ0oiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9XZWJDb21wb25lbnRzLy4vcnVuZXN0b25lL2NsaWNrYWJsZUFyZWEvY3NzL2NsaWNrYWJsZS5jc3MiXSwic291cmNlc0NvbnRlbnQiOlsiLmNsaWNrYWJsZSB7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG4vKiBLZXlib2FyZCB1c2VycyBuZWVkIHRvIHNlZSB3aGljaCBjaG9pY2UgdGhleSBhcmUgb24uICovXG4uY2xpY2thYmxlOmZvY3VzLXZpc2libGUge1xuICAgIG91dGxpbmU6IDNweCBzb2xpZCB2YXIoLS1jbGlja2FibGVGb2N1c0NvbG9yKTtcbiAgICBvdXRsaW5lLW9mZnNldDogMnB4O1xufVxuXG4uY2xpY2thYmxlOmhhcyhjb2RlKSB7XG4gICAgcGFkZGluZzogM3B4O1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbn1cblxuLmNsaWNrYWJsZS1jbGlja2VkOmhhcyhjb2RlKSB7XG4gICAgYm94LXNoYWRvdzogMHB4IDBweCAycHggMnB4IHJnYmEoMCwgMTAwLCAwLCAwLjc1KTtcbn1cblxuLmNsaWNrYWJsZS1jbGlja2VkIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1jbGlja2FibGVCZ0NvbG9yKTtcbn1cblxuLmNsaWNrYWJsZS1jbGlja2VkIHRkIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZGFkNmMxO1xuICAgIGJveC1zaGFkb3c6IGluaXRpYWw7XG59XG5cbnRhYmxlIHtcbiAgICBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlO1xufVxuXG50aC5jbGlja2FibGUsXG50ZC5jbGlja2FibGUge1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIGJsYWNrO1xufVxuXG50ZC5jbGlja2FibGUtY2xpY2tlZCB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2RhZDZjMTtcbiAgICBib3gtc2hhZG93OiBpbml0aWFsO1xufVxuXG50ZCBpbWcge1xuICAgIG1hcmdpbjogNXB4O1xufVxuXG4uY2xpY2thYmxlLWNsaWNrZWQgdGgge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNkYWQ2YzE7XG4gICAgYm94LXNoYWRvdzogaW5pdGlhbDtcbn1cblxudGguY2xpY2thYmxlLWNsaWNrZWQge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNkYWQ2YzE7XG4gICAgYm94LXNoYWRvdzogaW5pdGlhbDtcbn1cblxuLmNsaWNrYWJsZS1pbmNvcnJlY3QsXG4uY2xpY2thYmxlLWluY29ycmVjdCB0aCxcbi5jbGlja2FibGUtaW5jb3JyZWN0IHRkIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCByZWQgIWltcG9ydGFudDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1jbGlja2FibGVJbmNvcnJlY3RCZ0NvbG9yKTtcbn1cblxuaW1nLmNsaWNrYWJsZS1pbmNvcnJlY3Qge1xuICAgIGJveC1zaGFkb3c6IDBweCAwcHggMnB4IDJweCByZ2JhKDEwMCwgMCwgMCwgMC43NSk7XG59XG5cbi5jbGlja2FibGUtaW5jb3JyZWN0Omhhcyhjb2RlKSB7XG4gICAgYm94LXNoYWRvdzogMHB4IDBweCAycHggMnB4IHJnYmEoMjUxLCAwLCAwLCAwLjc1KTtcbn1cblxuOnJvb3Qge1xuICAgIC0tY2xpY2thYmxlQmdDb2xvcjogeWVsbG93O1xuICAgIC0tY2xpY2thYmxlSW5jb3JyZWN0QmdDb2xvcjogI2ZmY2NjYztcbiAgICAtLWNsaWNrYWJsZUZvY3VzQ29sb3I6ICMwYjVmZmY7XG59XG5cbjpyb290LmRhcmstbW9kZSB7XG4gICAgLS1jbGlja2FibGVCZ0NvbG9yOiByZ2IoNjAsIDg2LCAzNik7XG4gICAgLS1jbGlja2FibGVJbmNvcnJlY3RCZ0NvbG9yOiAjNTYyYzJjO1xuICAgIC0tY2xpY2thYmxlRm9jdXNDb2xvcjogIzdhYjhmZjtcblxuICAgIC5jbGlja2FibGUtY2xpY2tlZDpoYXMoY29kZSk6bm90KC5jbGlja2FibGUtaW5jb3JyZWN0KSB7XG4gICAgICAgIGJveC1zaGFkb3c6IDBweCAwcHggMnB4IDJweCByZ2JhKDI1MSwgMjU1LCAyMSwgMC43NSk7XG4gICAgfVxufVxuIl0sIm5hbWVzIjpbXSwic291cmNlUm9vdCI6IiJ9*/

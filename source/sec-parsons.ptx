@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Example adapted from examples/sample-book/rune.xml in PreTeXt.
+     Copyright (C) 2016-2026  Robert A. Beezer
+     Distributed under the GNU General Public License, version 2 or later. -->
+<section xml:id="sec-parsons" label="sec-parsons" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Parsons Problems</title>
+
+  <p>This standard Parsons problem from the PreTeXt sample book allows multiple valid orderings.</p>
+
+  <exercise xml:id="parsons-baseline" label="parsons-baseline" adaptive="yes" indentation="hide" language="python">
+    <title>Calculate a Hypotenuse</title>
+    <statement>
+      <p>Put the blocks in a valid order to calculate and print <c>c</c>. Only use the required blocks. There are many valid orderings.</p>
+    </statement>
+    <blocks>
+      <block order="5" name="math">
+        <cline>import math</cline>
+      </block>
+      <block order="7" correct="no">
+        <cline>import antigravity</cline>
+      </block>
+      <block order="6" name="a">
+        <cline>a = 3</cline>
+      </block>
+      <block order="2" name="b">
+        <choice correct="yes">
+          <cline>b = 4</cline>
+        </choice>
+        <choice>
+          <cline>4 = b</cline>
+        </choice>
+      </block>
+      <block order="3" name="cSq" depends="a b">
+        <cline>cSquared = a ** 2 + b ** 2</cline>
+      </block>
+      <block order="1" name="c" depends="cSq math">
+        <cline>c = math.sqrt(cSquared)</cline>
+      </block>
+      <block order="4" depends="c">
+        <cline>print(c)</cline>
+      </block>
+    </blocks>
+  </exercise>
+
+  <p>The iframe below uses a copy of the generated Parsons HTML as the starting point for an experiment.</p>
+
+  <figure xml:id="figure-parsons-experiment">
+    <caption>Parsons experiment</caption>
+    <interactive xml:id="interactive-parsons-experiment" label="interactive-parsons-experiment" platform="javascript" custom-runestone="yes" dark-mode-enabled="yes" design-width="864" aspect="3:4" source="experiments/parsons.js">
+      <slate xml:id="parsons-experiment" surface="html" aspect="3:4">
+        <xi:include href="experiments/parsons.xhtml" />
+      </slate>
+    </interactive>
+  </figure>
+</section>
