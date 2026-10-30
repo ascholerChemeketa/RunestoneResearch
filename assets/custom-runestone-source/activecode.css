@@ -1,0 +1,447 @@
+.modal-profile {
+    display: none;
+    min-height: 300px;
+    overflow: hidden;
+    width: 700px;
+    padding: 25px;
+    border: 1px solid #fff;
+    box-shadow: 0px 2px 7px #292929;
+    -moz-box-shadow: 0px 2px 7px #292929;
+    -webkit-box-shadow: 0px 2px 7px #292929;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background: #f2f2f2;
+    z-index: 50;
+}
+
+.modal-lightsout {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 25;
+    background: #000;
+}
+
+.modal-close-profile {
+    display: none;
+    position: absolute;
+    height: 43px;
+    width: 43px;
+    /*background-image: url('close.png'); */
+    top: 1px;
+    right: 0.5px;
+}
+
+.ac_actions {
+    display: flex;
+    flex-wrap: wrap;
+    /* wrap for smaller screens */
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.ac_sep {
+    background: var(--componentBorderColor);
+    display: inline-block;
+    margin: -15px 10px;
+    width: 1px;
+    height: 35px;
+    padding: 0;
+    border: 0;
+}
+
+#main-content section .runestone.ac_section .ac_section {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 800px;
+    clear: both;
+}
+
+.unittest-results {
+    margin-bottom: 20px;
+}
+
+.unittest-results table {
+    width: 100%;
+}
+
+.ac_output {
+    margin-top: 10px;
+    margin-bottom: -10px;
+    background-color: inherit;
+}
+
+.ac_duck_api_result {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    margin: 0.5em 0;
+}
+
+/* Keep visible output available for navigation without reserving space before
+   the first run. The separate, pre-mounted status announces completed output. */
+.ac_output--collapsed {
+    height: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+.ac_output pre {
+    background-color: var(--ac-out-background);
+}
+
+/* Inline replacement for window.prompt on input().  Lives at the end of the
+   output pane so it reads like a terminal cursor rather than dimming the page
+   and opening at the top of the window. */
+.ac-input-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4em;
+    /* The output pane is overflow:auto, so the field's border and focus ring
+       are clipped if the row sits flush against its bottom edge. */
+    margin: 0.3em 0 0.5em;
+}
+
+.ac-input-prompt {
+    margin: 0;
+    font-family: inherit;
+    font-weight: bold;
+    white-space: pre-wrap;
+}
+
+.ac-input-field {
+    /* sized, not stretched, so Submit stays next to the field; shrinks rather
+       than overflowing on a narrow screen */
+    flex: 0 1 22em;
+    min-width: 6em;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0.25em 0.4em;
+    border: 1px solid var(--componentBorderColor, #767676);
+    border-radius: 3px;
+    /* pair the background and the text colour: both follow the theme, so the
+       field stays readable in dark mode */
+    background-color: var(--background, #fff);
+    color: var(--bodyFont, #000);
+}
+
+.ac-input-field:focus {
+    outline: 2px solid var(--componentBorderColor, #2b6cb0);
+    outline-offset: 1px;
+}
+
+/* Coloured like the component's other buttons (--codeButtons is themed), so it
+   reads as a button rather than as part of the output in either mode. */
+.ac-input-submit {
+    font-family: inherit;
+    font-size: 0.9em;
+    padding: 0.25em 0.7em;
+    border: 1px solid var(--codeButtonsBorder, #474949);
+    border-radius: 3px;
+    background-color: var(--codeButtons, #474949);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.ac-input-submit:hover,
+.ac-input-submit:focus {
+    filter: brightness(1.2);
+}
+
+.python_check_results pre,
+.ac_section .error pre,
+.ac-modal-body .error pre {
+    background-color: var(--content-background, #fefefe);
+}
+
+.ac_caption {
+    text-align: center;
+    font-weight: bold;
+}
+
+.ac_caption_text {
+    font-weight: normal;
+}
+
+.ac_question {
+    background-color: var(--questionBgColor);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.active_out {
+    background-color: var(--ac-out-background);
+    border-radius: 6px;
+    min-width: 20em;
+    max-height: 300px;
+    overflow: auto;
+}
+
+.visible-ac-canvas {
+    border: 2px solid var(--componentBorderColor);
+}
+
+.full_width ol {
+    max-width: 100% !important;
+}
+
+.ac-disabled {
+    pointer-events: none;
+}
+
+.ac-feedback {
+    border: 1px solid var(--componentBorderColor);
+    padding: 3px;
+    background-color: var(--content-background, #fff);
+}
+
+.ac-feedback-pass {
+    background-color: var(--ac-passed);
+    text-align: center;
+}
+
+.ac-feedback-fail {
+    background-color: var(--ac-failed);
+    text-align: center;
+}
+
+.CodeMirror {
+    border: solid 2px;
+    margin-bottom: 10px;
+    max-width: 100%;
+    min-width: 5em;
+    min-height: 100px;
+    /* best way to control height is let CodeMirror-scroll do it */
+    height: auto;
+}
+
+/* Editors are user-resizable via the native CSS resize handle (a
+ * ResizeObserver in activecode.js refreshes CodeMirror on change).
+ * Once the user drags the handle the browser sets an explicit
+ * height, which overrides height: auto above. */
+.CodeMirror.ac-resizable {
+    resize: both;
+    overflow: hidden;
+}
+
+.CodeMirror-scroll {
+    /* calculated height is designed so editor panel
+     * will fit on screen (with space for navbar and
+     * controls). user should not have to scroll both
+     * page and editor panel. */
+    max-height: calc(100vh - 180px);
+}
+
+/* decorate locked lines that do not have lock marker */
+.CodeMirror__locked-line
+    .CodeMirror-gutter-wrapper:not(
+        :has(.CodeMirror__gutter-locked-marker)
+    ):before {
+    content: " ";
+    display: block;
+    width: 2px;
+    height: 1lh;
+    right: -9px;
+    position: relative;
+    background-color: #888;
+    float: left;
+}
+
+.CodeMirror__gutter-locked-marker {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='16px' viewBox='0 -960 960 960' width='16px' fill='%23currentColor'%3E%3Cpath d='M263.72-96Q234-96 213-117.15T192-168v-384q0-29.7 21.15-50.85Q234.3-624 264-624h24v-96q0-79.68 56.23-135.84 56.22-56.16 136-56.16Q560-912 616-855.84q56 56.16 56 135.84v96h24q29.7 0 50.85 21.15Q768-581.7 768-552v384q0 29.7-21.16 50.85Q725.68-96 695.96-96H263.72Zm.28-72h432v-384H264v384Zm216.21-120Q510-288 531-309.21t21-51Q552-390 530.79-411t-51-21Q450-432 429-410.79t-21 51Q408-330 429.21-309t51 21ZM360-624h240v-96q0-50-35-85t-85-35q-50 0-85 35t-35 85v96Zm-96 456v-384 384Z'/%3E%3C/svg%3E");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 16px 16px;
+    height: 20px;
+    width: 20px;
+    background-color: #000;
+}
+
+.CodeMirror__locked-line {
+    background-color: var(--ac-locked-line-bg);
+}
+
+/* keep after locked-line so this has higher priority */
+.CodeMirror__highlight-line {
+    background-color: var(--ac-highlight-line-bg);
+}
+
+.ac_sql_result {
+    background-color: var(--ac-out-background);
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ac_sql_result_success,
+.ac_sql_result_failure {
+    border: 0px;
+    padding: 0px;
+}
+
+.ac_sql_result_failure pre {
+    background: var(--dangerAlerts);
+}
+
+.codelens {
+    margin-bottom: 20px;
+}
+
+.codecoach {
+    margin-top: 20px;
+}
+
+.ac_section .alert h3:first-child {
+    margin-top: 0px;
+}
+
+.activecode__stdin {
+    display: block;
+    width: 100%;
+    resize: none;
+    overflow: auto;
+    margin-bottom: 20px;
+}
+
+.unittest-results__heading {
+    text-align: center;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.unittest-results__percent {
+    text-align: center;
+    font-weight: bold;
+}
+
+.scratch-ac-modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 9000;
+    /* Sit on top */
+    left: calc((100% - 800px) / 2);
+    width: 800px;
+    top: 5%;
+    max-height: 90%;
+    overflow: auto;
+    /* Enable scroll if needed */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    background-color: var(--background);
+}
+
+@media (max-width: 960px) {
+    .scratch-ac-modal {
+        width: 90%;
+        left: 5%;
+    }
+}
+
+.ac-modal-body,
+.ac-modal-content {
+    background-color: var(--background);
+}
+
+.ac-modal-header .close {
+    color: var(--bodyFont);
+}
+
+.scratch-ac-modal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* CodeTailor-related CSS START */
+.scaffolding-container {
+    margin-right: 20px;
+    position: fixed;
+    right: 0px;
+    max-height: 100%;
+    overflow-y: scroll;
+    top: 0px;
+    padding-top: 60px;
+    z-index: 999;
+}
+
+.scaffolding-container .ac_actions {
+    display: none;
+}
+
+.scaffolding-container.hidden {
+    display: none;
+}
+
+.parsons-scaffolding {
+    border: 2px solid;
+    border-color: black;
+    border-radius: 10px;
+    background-color: #f0f8ff;
+    padding-top: 10px;
+    box-shadow: 10px 5px 5px gray;
+}
+
+.scaffolding-loading-prompt.loading {
+    display: block;
+}
+
+.scaffolding-loading-prompt {
+    display: none;
+    text-align: center;
+    background-color: #ffebae;
+    padding: 10px 5px;
+    margin: 5px;
+    font-size: 12pt;
+    color: #191919;
+}
+
+.copy-button-hide {
+    display: none;
+}
+
+/* open CodeTailor*/
+/* #ED7014 left the white label at 3.03:1; #BC580E keeps the orange at 4.63:1. */
+button.parsons-scaffolding-btn {
+    background-color: #bc580e !important;
+    color: white !important;
+}
+
+button.reopen-help-btn {
+    background-color: #bc580e !important;
+    color: white !important;
+}
+
+.reopen-help-btn.hide {
+    display: none;
+}
+
+#loading-spinner {
+    border: 4px solid #ed7014;
+    border-top: 4px solid #084887;
+    border-bottom: 4px solid #084887;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1.5s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* CodeTailor-related CSS END */

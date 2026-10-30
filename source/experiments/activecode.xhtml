@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Copied from output/web/sec-activecode.html. Edit this XHTML for the experiment.
-     Component IDs differ from the baseline so saved state stays independent.
+     The component ID and its editor ID are rebound from the exercise label.
      Original example: PreTeXt examples/sample-book/rune.xml.
      Copyright (C) 2016-2026  Robert A. Beezer
      Distributed under the GNU General Public License, version 2 or later. -->
 <div xmlns="http://www.w3.org/1999/xhtml" class="ptx-runestone-container" id="activecode-experiment-root">
   <div class="runestone explainer ac_section ">
-    <div data-component="activecode" id="rs-activecode-experiment">
-      <textarea data-lang="python" data-audio="" data-coach="true" style="visibility: hidden;" id="rs-activecode-experiment_editor" data-question_label="" data-codelens="true" data-timelimit="25000">print("Hello, World!")
+    <div data-component="activecode" data-duck-api="true" id="__RUNESTONE_ID__">
+      <textarea data-lang="python" data-audio="" data-coach="true" style="visibility: hidden;" id="__RUNESTONE_ID___editor" data-question_label="" data-codelens="true" data-timelimit="25000">def add(a,b):
+    return 4
+====
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+   def testOne(self):
+       self.assertEqual(add(2,2), 4, "Adding two identical integers")
+       self.assertEqual(add(7,13), 20, "Adding two different integers")
+       self.assertAlmostEqual(add(2.0,3.0), 5.0, 5, "Adding two decimal numbers")
+
+myTests().main()
 </textarea>
     </div>
   </div>

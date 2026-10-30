@@ -6,25 +6,44 @@
 <section xml:id="sec-activecode" label="sec-activecode" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>ActiveCode</title>
 
-  <p>Run or edit this standard Python ActiveCode example from the PreTeXt sample book.</p>
+  <p>A standard activecode using the normal Runestone js bundle:</p>
 
-  <listing xml:id="listing-activecode-baseline">
+  <exercise xml:id="exercise-activecode-baseline" label="activecode-baseline">
     <title>Standard ActiveCode</title>
-    <program xml:id="activecode-baseline" label="activecode-baseline" interactive="activecode" language="python">
+    <statement>
+      <p>Fix the code so that <c>add(a, b)</c> correctly adds two numbers.</p>
+    </statement>
+    <program xml:id="activecode-baseline" interactive="activecode" language="python">
       <code>
-      print("Hello, World!")
+      def add(a,b):
+          return 4
       </code>
+      <tests>
+      from unittest.gui import TestCaseGui
+
+      class myTests(TestCaseGui):
+
+         def testOne(self):
+             self.assertEqual(add(2,2), 4, "Adding two identical integers")
+             self.assertEqual(add(7,13), 20, "Adding two different integers")
+             self.assertAlmostEqual(add(2.0,3.0), 5.0, 5, "Adding two decimal numbers")
+
+      myTests().main()
+      </tests>
     </program>
-  </listing>
+  </exercise>
 
-  <p>The iframe below uses a copy of the generated ActiveCode HTML as the starting point for an experiment.</p>
+  <p>A modified activecode that runs in an iframe using a custom Runestone bundle. It displays a message from the Duck API on each run:</p>
 
-  <figure xml:id="figure-activecode-experiment">
-    <caption>ActiveCode experiment</caption>
-    <interactive xml:id="interactive-activecode-experiment" label="interactive-activecode-experiment" platform="javascript" custom-runestone="yes" dark-mode-enabled="yes" design-width="864" aspect="3:2" source="experiments/activecode.js">
-      <slate xml:id="activecode-experiment" surface="html" aspect="3:2">
-        <xi:include href="experiments/activecode.xhtml" />
-      </slate>
-    </interactive>
-  </figure>
+  <exercise xml:id="exercise-activecode-experiment" label="activecode-experiment">
+    <title>ActiveCode experiment</title>
+    <statement>
+      <p>Fix the same <c>add(a, b)</c> function in the experimental ActiveCode. The unit tests score your solution.</p>
+      <interactive xml:id="interactive-activecode-experiment" platform="javascript" custom-runestone="yes" dark-mode-enabled="yes" design-width="1000" aspect="4:1" source="experiments/activecode.js">
+        <slate xml:id="activecode-experiment" surface="html" aspect="3:2">
+          <xi:include href="experiments/activecode.xhtml" />
+        </slate>
+      </interactive>
+    </statement>
+  </exercise>
 </section>

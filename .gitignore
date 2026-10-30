@@ -1,5 +1,8 @@
 output/
+published/
 .cache/
 .vscode/
 logs/
 generated-assets/
+published/
+HANDOFF.md

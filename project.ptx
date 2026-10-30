@@ -6,7 +6,10 @@
 <project ptx-version="2">
   <targets>
     <target name="web" format="html" xsl="custom.xsl">
-      <stringparams html.css.extra="external/css/custom.css" />
+      <stringparams html.css.extra="external/css/custom.css"/>
+    </target>
+    <target name="runestone" format="html" publication="publication-runestone.ptx" output-dir="../published/rsresearch" xsl="custom.xsl">
+      <stringparams html.css.extra="external/css/custom.css"/>
     </target>
     <target name="print" format="pdf" />
   </targets>

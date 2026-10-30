@@ -5,18 +5,22 @@ body.ptx-content {
     color: var(--body-text-color);
 }
 
-/* Match default-modern's wide Runestone blocks for authored wide iframes.
-   Keep the iframe's design width and scroll within its wrapper on small screens. */
-.ptx-content .interactive-iframe-container:has(> iframe[data-design-width-wide]) {
-    overflow-x: auto;
-}
-
-@container ptx-main (width > 696px) {
+/* stretch to fill main content area in same way normal runestone blocks do */
+@container ptx-main (width > 821px) {
     .ptx-content .interactive-iframe-container:has(> iframe[data-design-width-wide]) {
         --max-width: min(calc(100cqw - 96px), 900px);
         min-width: 100%;
         clear: right;
         width: var(--max-width);
         max-width: var(--max-width);
+    }
+
+    :is(.timedAssessment,.theorem-like,.definition-like,.example-like,.exercise-like,.project-like,.remark-like,.openproblem-like,.openproblems-like,.computation-like,.knowl__content):has([data-design-width]) {
+        --max-width: min((100cqw - 2 * 48px), 10000px);
+        min-width: 100%;
+        clear: right;
+        width: var(--max-width);
+        max-width: var(--max-width);
+        margin-left: calc(-.5 * (100cqw - 821px));
     }
 }

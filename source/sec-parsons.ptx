@@ -6,7 +6,7 @@
 <section xml:id="sec-parsons" label="sec-parsons" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Parsons Problems</title>
 
-  <p>This standard Parsons problem from the PreTeXt sample book allows multiple valid orderings.</p>
+  <p>This standard Parsons problem from the PreTeXt sample book using the standard Runestone js bundle.</p>
 
   <exercise xml:id="parsons-baseline" label="parsons-baseline" adaptive="yes" indentation="hide" language="python">
     <title>Calculate a Hypotenuse</title>
@@ -43,14 +43,18 @@
     </blocks>
   </exercise>
 
-  <p>The iframe below uses a copy of the generated Parsons HTML as the starting point for an experiment.</p>
+  <p>The iframe below uses a copy of the generated Parsons HTML as the starting point for an experiment. It doesn't do anything special, it is just a sample of setting up a customized Parsons problem.</p>
 
-  <figure xml:id="figure-parsons-experiment">
-    <caption>Parsons experiment</caption>
-    <interactive xml:id="interactive-parsons-experiment" label="interactive-parsons-experiment" platform="javascript" custom-runestone="yes" dark-mode-enabled="yes" design-width="864" aspect="3:4" source="experiments/parsons.js">
-      <slate xml:id="parsons-experiment" surface="html" aspect="3:4">
-        <xi:include href="experiments/parsons.xhtml" />
-      </slate>
-    </interactive>
-  </figure>
+  <!-- The exercise label identifies the question; the interactive needs no label. -->
+  <exercise xml:id="exercise-parsons-experiment" label="parsons-experiment">
+    <title>Parsons experiment</title>
+    <statement>
+      <p>Arrange the blocks in the experimental Parsons component.</p>
+      <interactive xml:id="interactive-parsons-experiment" platform="javascript" custom-runestone="yes" dark-mode-enabled="yes" design-width="1000" aspect="2:1" source="experiments/parsons.js">
+        <slate xml:id="parsons-experiment" surface="html" aspect="3:4">
+          <xi:include href="experiments/parsons.xhtml" />
+        </slate>
+      </interactive>
+    </statement>
+  </exercise>
 </section>
